@@ -6,7 +6,7 @@ import { DICTIONARY_SERVER } from "@/config";
 export async function getAuthHeaders(): Promise<HeadersInit> {
   try {
     // Import auth dynamically to avoid SSR issues
-    const { auth } = await import("@/app/api/auth/[...nextauth]/route");
+    const { auth } = await import("@/util/auth");
     const session = await auth();
     
     // Debug the session
@@ -112,7 +112,7 @@ export async function getApiToken(): Promise<string | null> {
     }
     
     // Import dynamically to avoid SSR issues
-    const { auth } = await import("@/app/api/auth/[...nextauth]/route");
+    const { auth } = await import("@/util/auth");
     
     // Get the session
     const session = await auth();

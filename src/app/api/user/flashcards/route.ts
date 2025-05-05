@@ -1,7 +1,7 @@
 import { DICTIONARY_SERVER } from '@/config';
 import { getAuthHeaders } from '@/lib/auth';
 import { NextRequest, NextResponse } from 'next/server';
-import { auth } from '../../auth/[...nextauth]/route';
+import { auth } from '../../../../util/auth';
 
 // Updated helper to get secure JWT authentication headers
 async function getSecureAuthHeaders() {

@@ -8,7 +8,7 @@ import { Flashcard } from "@/types/flashcard";
 import { ObjectId } from "mongodb";
 import { client, database } from "./database";
 
-import { auth } from "@/app/api/auth/[...nextauth]/route";
+import { auth } from "@/util/auth";
 
 // Simple API call function with authentication
 async function apiCall(endpoint: string, method: string = 'GET', data?: any): Promise<any> {

@@ -2,7 +2,7 @@
 
 import styles from "./page.module.css"
 import { Session } from "next-auth";
-import { auth } from "../api/auth/[...nextauth]/route";
+import { auth } from "../../util/auth";
 import { database } from "@/actions/database";
 import { ObjectId } from "mongodb";
 import Link from "next/link";

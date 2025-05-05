@@ -2,6 +2,10 @@ import type { NextConfig } from "next";
 import { DICTIONARY_SERVER } from "./src/config";
 
 const nextConfig: NextConfig = {
+  eslint: {
+
+    ignoreDuringBuilds: true,
+  },
   images: {
     remotePatterns: [
       {

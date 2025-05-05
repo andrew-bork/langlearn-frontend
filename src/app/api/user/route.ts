@@ -1,7 +1,7 @@
 import { client, database } from "@/actions/database"
 import { ObjectId, WithId } from "mongodb";
 import { NextRequest, NextResponse } from "next/server"
-import { auth } from "../auth/[...nextauth]/route";
+import { auth } from "../../../util/auth";
 import { DeckID } from "@/types/deck";
 
 
