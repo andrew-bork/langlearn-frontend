@@ -33,13 +33,13 @@ const authConfig: NextAuthConfig = {
         if(!user.email) throw "No email";
         console.log(`Logging in user in backend: ${user.id}`);
         
-        let result = await database.collection("user").findOne({
+        let result = await database.collection("users").findOne({
           email: user.email
         });
         
 
         if(!result) {
-          let result = await database.collection("user").insertOne({
+          let result = await database.collection("users").insertOne({
             created_at: new Date(),
             updated_at: new Date(),
             provider: "google",
