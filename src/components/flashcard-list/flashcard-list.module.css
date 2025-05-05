@@ -1,0 +1,133 @@
+.flashcard-list {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.flashcard {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.flashcard-term {
+  flex: 0 0 auto;
+  padding-right: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.flashcard-definition {
+  flex: 1;
+  padding-left: 1.5rem;
+  color: #374151;
+}
+
+.vertical {
+  width: 1px;
+  background-color: #e5e7eb;
+  align-self: stretch;
+  margin: 0 0.5rem;
+}
+
+.flashcard-reading {
+    padding: 24px;
+}
+
+.flashcard-term {
+    padding: 24px;
+}
+
+.cards {
+  background-color: #ffffff9a;
+  transition: .3s background-color;
+  color: #000000cd;
+  position: relative;
+  width: 40vw;
+}
+
+
+.active {
+  background-color: #ffffff;
+}
+.button {
+  font-size: 18px;
+  padding: 16px;
+  border-radius: 4px;
+
+  background-color: #00000018;
+  transition: .3s background-color, .3s transform;
+
+}
+
+.button:hover {
+  background-color: #0000001a;
+  transform: translate(0, -10%);
+
+}
+
+.edit-button {
+  padding: 8px;
+  border-radius: 100%;
+
+  background-color: #00000000;
+  transition: .3s background-color;
+}
+
+.edit-button:hover {
+  background-color: #00000023;
+
+}
+
+.editing input, .editing textarea {
+  display: block;
+  background: #00000029;
+  width: 90%;
+  padding: 4px;
+}
+.editing {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.term-input {
+  font-size: 1em;
+}
+
+.reading-input {
+  font-size: 0.3em;
+} 
+
+.flashcard-list-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  font-size: 36px;
+
+  align-items: center;
+}
+
+.button-list {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  margin: 16px;
+}
+
+.toolbar {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
