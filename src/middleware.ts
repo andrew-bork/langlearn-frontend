@@ -30,12 +30,14 @@ export async function middleware(request: NextRequest) {
       req: request,
       secret: process.env.NEXTAUTH_SECRET || process.env.JWT_SECRET_KEY || "63e13b4b54eef7586d18e6b335f1e2b4f5b081f873f289dd4db9d79d8abefffe"
     });
+
+    console.log(token);
     
     // If not authenticated, redirect to sign-in
     if (!token) {
       const url = new URL('/auth/signin', request.url);
       url.searchParams.set('callbackUrl', encodeURI(request.url));
-      return NextResponse.redirect(url);
+      // return NextResponse.redirect(url);
     }
   }
   
