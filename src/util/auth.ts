@@ -1,3 +1,4 @@
+import { database } from "@/actions/database";
 import { DICTIONARY_SERVER } from "@/config";
 import type { NextAuthConfig } from "next-auth";
 import NextAuth from "next-auth";
@@ -29,36 +30,49 @@ const authConfig: NextAuthConfig = {
       }
 
       try {
-        console.log(`Registering user in backend: ${user.id}`);
+        if(!user.email) throw "No email";
+        console.log(`Logging in user in backend: ${user.id}`);
         
-        const response = await fetch(`${DICTIONARY_SERVER}/auth/google/register`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            id: user.id,
-            email: user.email || "",
-            name: user.name || "User",
-            picture: user.image || "",
-          }),
-          cache: 'no-store',
+        let result = await database.collection("user").findOne({
+          email: user.email
         });
-
         
-        if (!response.ok) {
-          const errorText = await response.text();
-          console.error(`Backend registration failed (${response.status}): ${errorText}`);
-        } else {
-          const result = await response.json();
-          console.log(`User registered successfully: ${result.user_id}`);
+
+        if(!result) {
+          let result = await database.collection("user").insertOne({
+            created_at: new Date(),
+            updated_at: new Date(),
+            provider: "google",
+
+            email: user.email,
+            name: user.name,
+            picture: user.image,
+            decks: []
+          })
+
+          if(!result) throw "User failed to register into database"
+
+          console.log(`User registered successfully: ${result.insertedId}`);
+        
+          token = {
+            id: result.insertedId,
+            name: user.name,
+            email: user.email,
+            picture: user.image,
+          };
+
+        }else {
+          console.log(`User logged in successfully: ${result._id}`);
           
           token = {
-            id: result.user_id,
+            id: result._id,
             name: user.name,
             email: user.email,
             picture: user.image,
           };
 
         }
+
       } catch (error) {
         console.error("User registration error:", error);
       }
