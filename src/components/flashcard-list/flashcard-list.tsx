@@ -6,7 +6,6 @@ import styles from "./flashcard-list.module.css";
 import { GoCheck, GoPencil, GoPlug, GoPlus, GoTrash, GoX } from "react-icons/go";
 import { SetStateAction, useState } from "react";
 import { DeckID } from "@/types/deck";
-import FlashcardAddModal from "./flashcard-add-modal/flashcard-add-modal";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { addFlashcardToDeck, setDeckFlashcards } from "@/actions/deck-actions";
