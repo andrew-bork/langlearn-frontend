@@ -5,7 +5,7 @@ import { Header } from "@/components/header/header";
 import { NextAuthProvider } from "@/components/providers/next-auth-provider";
 
 import styles from "./layout.module.css"
-import ReactModal from "react-modal";
+
 
 
 const geistSans = Geist({

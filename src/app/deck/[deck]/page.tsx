@@ -6,9 +6,9 @@ import { Flashcard } from "@/types/flashcard";
 import DeckView from "./deck-view";
 
 
-export default async function DeckPage({ params }: { params: { deck: string } }) {
+export default async function DeckPage({ params }: { params: Promise<{ deck: string }> }) {
   await params;
-  const deckID = await params.deck;
+  const deckID = (await params).deck;
   const deck = await database.collection("decks").findOne({
     _id: ObjectId.createFromBase64(deckID)
   });

@@ -1,12 +1,12 @@
 "use client"
 
-import { MultiRubyDisplay, RubyDisplay } from "@/components/ruby-display/ruby-display";
+import { MultiRubyDisplay } from "@/components/ruby-display/ruby-display";
 import { Flashcard } from '@/types/flashcard';
 import styles from "./flashcard-list.module.css";
-import { GoCheck, GoPencil, GoPlug, GoPlus, GoTrash, GoX } from "react-icons/go";
-import { SetStateAction, useState } from "react";
+import { GoCheck, GoPencil, GoTrash, GoX } from "react-icons/go";
+import { useState } from "react";
 import { DeckID } from "@/types/deck";
-import Link from "next/link";
+
 import { useRouter } from "next/navigation";
 import { addFlashcardToDeck, setDeckFlashcards } from "@/actions/deck-actions";
 

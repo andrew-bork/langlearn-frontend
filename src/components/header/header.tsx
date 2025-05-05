@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { signIn, signOut, useSession } from "next-auth/react"
 import Image from "next/image"
 import Link from "next/link"
-import { useEffect, useState } from "react"
+import { Suspense, useEffect, useState } from "react"
 import { usePathname } from "next/navigation"
 
 import styles from "./header.module.css";
@@ -108,6 +108,7 @@ export function Header() {
               </span>
             ) : null}
           </div>
+          <Suspense>
 
           {status === "loading" ? (
             <div 
@@ -155,6 +156,7 @@ export function Header() {
               </Button>
             </div>
           )}
+          </Suspense>
         </nav>
     </header>
   )

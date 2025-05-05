@@ -4,7 +4,7 @@ import { setDeckFlashcards } from "@/actions/deck-actions";
 import { TimelineControl } from "@/components/flashcard-control-bar/flashcard-control-bar";
 import FlashcardList from "@/components/flashcard-list/flashcard-list";
 import { Flashcard, FlashcardBack, FlashcardFront } from "@/components/flashcard-view/flashcard-view";
-import { MultiRubyDisplay, RubyDisplay } from "@/components/ruby-display/ruby-display";
+import { MultiRubyDisplay } from "@/components/ruby-display/ruby-display";
 import { DeckID } from "@/types/deck";
 import { Flashcard as FlashcardT } from "@/types/flashcard";
 import { useRouter } from "next/navigation";

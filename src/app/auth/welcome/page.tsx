@@ -2,7 +2,7 @@
 
 import { useSession } from 'next-auth/react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useEffect } from 'react';
+import { Suspense, useEffect } from 'react';
 
 export default function WelcomePage() {
   const router = useRouter();

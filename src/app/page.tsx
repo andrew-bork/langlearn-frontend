@@ -1,24 +1,9 @@
 "use client"
-import Image from "next/image";
-import styles from "./page.module.css";
-import { EditorState, Plugin, Transaction, PluginKey } from "prosemirror-state";
-import { useEffect, useState } from "react";
-import { ProseMirror } from "@nytimes/react-prosemirror";
-import { schema } from "prosemirror-schema-basic";
-import { CDictEntry } from "@/types/cdict";
-import { RubyDisplay } from "@/components/ruby-display/ruby-display";
-import { GoPlus } from "react-icons/go";
-import { createFlashcard } from "@/actions/deck-actions";
-import { useSession } from "next-auth/react";
-import ChineseInput, { TokenCard } from "@/components/interactive-text-input/chinese-input";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 
-interface JPToken {
-    token: string,
-    type: string,
-    // base?: string
-};
+import styles from "./page.module.css";
+import { useState } from "react";
+import ChineseInput, { TokenCard } from "@/components/interactive-text-input/chinese-input";
+
 
 
 export default function Home() {

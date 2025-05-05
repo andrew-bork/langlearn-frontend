@@ -1,11 +1,11 @@
 "use client"
-import { FlashcardListItem } from "@/components/flashcard-list/flashcard-list";
+
 import styles from "./page.module.css"
 import ChineseInput, { TokenCard } from "@/components/interactive-text-input/chinese-input";
 import { DeckID } from "@/types/deck";
 import { Flashcard } from "@/types/flashcard";
 import { useState } from "react";
-import { setDeckFlashcards } from "@/actions/deck-actions";
+
 import Link from "next/link";
 import { GoArrowLeft } from "react-icons/go";
 
