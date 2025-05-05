@@ -89,11 +89,6 @@ const authConfig: NextAuthConfig = {
         // Set user ID from token (prioritize Google ID format if available)
         session.user.id = (token.id as string) || (token.sub as string) || "";
         
-        // Ensure we use the properly formatted Google ID if available
-        if (!session.user.id.startsWith('google-') && token.sub) {
-          session.user.id = `google-${token.sub}`;
-        }
-        
         // Copy other user data
         session.user.email = token.email as string || session.user.email;
         session.user.name = token.name as string || session.user.name;
