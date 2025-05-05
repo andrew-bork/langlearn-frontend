@@ -55,7 +55,7 @@ const authConfig: NextAuthConfig = {
           console.log(`User registered successfully: ${result.insertedId}`);
         
           token = {
-            id: result.insertedId,
+            id: result.insertedId.toHexString(),
             name: user.name,
             email: user.email,
             picture: user.image,
@@ -65,7 +65,7 @@ const authConfig: NextAuthConfig = {
           console.log(`User logged in successfully: ${result._id}`);
           
           token = {
-            id: result._id,
+            id: result._id.toHexString(),
             name: user.name,
             email: user.email,
             picture: user.image,
